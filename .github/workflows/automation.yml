@@ -31,7 +31,7 @@ jobs:
         run: sudo apt-get install -y shellcheck
 
       - name: Run Linter on Shell Scripts
-        run: shellcheck scripts/*.sh
+        run: shellcheck integrated_data.sh
 
   monitor_changes:
     runs-on: ubuntu-latest
@@ -47,10 +47,10 @@ jobs:
             data:
               - 'data-hub/**'
               - 'db/**'
-              
+
       - name: Print Changed Folders
         run: |
-          echo "Data folder changed: ${{ steps.changes.outputs.data }}"
+          echo "Data folder changed: ${{ steps.changes.outputs.data }}"git 
 
   data_integration:
     runs-on: ubuntu-latest
