@@ -5,10 +5,11 @@ done
 
 # Create the output folder and file
 mkdir -p db
-> db/combined_data.csv
+: > db/combined_data.csv
+
 
 # Get the header from the first file
-first_file=$(ls data-hub/*.csv | head -n 1)
+first_file=$(find data-hub -maxdepth 1 -name '*.csv' | head -n 1)
 head -n 1 "$first_file" > db/combined_data.csv
 
 # Append data from all files, skipping headers
