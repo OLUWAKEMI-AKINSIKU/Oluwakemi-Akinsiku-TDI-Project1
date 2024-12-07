@@ -4,12 +4,16 @@ on:
   # Allows manual triggering of the workflow
   workflow_dispatch: 
   # Triggers the workflow on push to specific paths
-  push: main
+  push:
+    branches:
+        - main
     paths:
       - 'data-hub/**'
       - 'integrated_data/'
   # Triggers on pull request affecting specific paths
-  pull_request: main
+  pull_request:
+    branches:
+        - main
     paths:
       - 'data-hub/**'
 
@@ -43,7 +47,7 @@ jobs:
             data:
               - 'data-hub/**'
               - 'db/**'
-
+              
       - name: Print Changed Folders
         run: |
           echo "Data folder changed: ${{ steps.changes.outputs.data }}"
