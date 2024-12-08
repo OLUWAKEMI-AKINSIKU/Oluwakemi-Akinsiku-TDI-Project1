@@ -74,7 +74,9 @@ jobs:
           git config --global user.email "akinsikukemisola@gmail.com"
           git add db/combined_data.csv
           git commit -m "Automated Integration Script"
-          git push main
+          git push
+          
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          
           
